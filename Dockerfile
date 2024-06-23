@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     curl \
     gnupg2 \
-    software-properties-common
+    software-properties-common \
+    postgresql-client
 
 
 # Add Docker's official GPG key:
