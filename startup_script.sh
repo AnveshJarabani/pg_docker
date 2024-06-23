@@ -1,6 +1,5 @@
 #!/bin/bash
-# Delete line 62 from /etc/init.d/docker
-sed -i '62d' /etc/init.d/docker
+
 
 # Start Docker service (required for running Docker in Docker)
 service docker start

@@ -30,6 +30,12 @@ RUN curl -L "https://github.com/docker/compose/releases/download/2.3.3/docker-co
 
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+RUN \
+    echo "ulimits: $(ulimit -Sn):$(ulimit -Hn)"; \
+    sed -i 's/ulimit -Hn/# ulimit -Hn/g' /etc/init.d/docker; \
+    service docker start; \
+    rm -rf /var/cache/apt;
+
 COPY requirements.txt .
 # RUN pip install -r requirements.txt    
 # Add a startup script
