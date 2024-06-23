@@ -31,7 +31,7 @@ RUN curl -L "https://github.com/docker/compose/releases/download/2.3.3/docker-co
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt    
+# RUN pip install -r requirements.txt    
 # Add a startup script
 COPY startup_script.sh /usr/local/bin/startup_script.sh
 RUN chmod +x /usr/local/bin/startup_script.sh
