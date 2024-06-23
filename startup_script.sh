@@ -11,7 +11,7 @@ until docker info >/dev/null 2>&1; do
 done
 
 # Run a PostgreSQL container with default settings
-docker run --name postgres -d postgres
+docker run --name postgres -d -e POSTGRES_PASSWORD=gholymolyl postgres
 
 # Keep the container running
 tail -f /dev/null
